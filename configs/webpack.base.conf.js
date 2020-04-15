@@ -29,6 +29,12 @@ module.exports = {
             loader: 'babel-loader',
             exclude: '/node_modules/'
         }, {
+            test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }, {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
             options: {
@@ -65,6 +71,11 @@ module.exports = {
             ]
         }]
     },
+    resolve: {
+        alias: {
+            '~': 'src'
+        }
+    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: `${PATHS.assets}css/[name].css`
@@ -75,7 +86,8 @@ module.exports = {
             filename: './index.html'
         }),
         new CopyWebpackPlugin([
-            { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
+            { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+            { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
             { from: `${PATHS.src}/static`, to: '' }
         ])
     ]

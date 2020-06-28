@@ -1,0 +1,19 @@
+extends ../layout/main
+
+block variables
+    -var title = 'Webpack title';
+    -var description = 'Webpack description';
+
+block content
+    section
+        .container
+            //- mixin
+            +item('имя', 'описание')  
+    .container
+       h1 pug header
+    .container
+       h1 pug header
+            
+
+block script
+    script(type="text/javascript")

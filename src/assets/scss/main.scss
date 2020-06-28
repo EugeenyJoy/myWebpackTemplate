@@ -2,73 +2,51 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
+@import "utils/typography";
 @import "../css/reset.css";
+@import "../css/grid.css";
 
 html {
-  line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
-  }
+  min-width: 320px;
 }
 
 body {
+  line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
   font-family: $mainFont;
 	font-size: $mainFontSize;
   font-weight: $mainFontWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-section, .section {
-  position: relative;
-  padding: 40px 0;
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
+  min-width: 320px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
-}
-
-.contentWrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  min-width: 320px;
 }
 
 .container {
-  width: 100%;
-  flex: 0 0 auto;
+  max-width: 100%;
   position: relative;
   margin: 0 auto;
+  padding: 40px;
   max-width: $desktopWidth;
   @media screen and (max-width: $smDesktopWidth) {
     max-width: $tableWidth;
+    padding: 36px;
   }
   @media screen and (max-width: $tableWidth) {
     max-width: $phoneWidth;
+    padding: 28px;
   }
   @media screen and (max-width: $phoneWidth) {
     max-width: $smPhoneWidth;
+    padding: 20px;
   }
 }
 

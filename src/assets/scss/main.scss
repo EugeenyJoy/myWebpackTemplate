@@ -23,32 +23,17 @@ body {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   margin: 0 auto;
   min-width: 320px;
 }
 
-.container {
-  max-width: 100%;
-  position: relative;
+.content-wrapper {
+  width: 100%;
   margin: 0 auto;
-  padding: 40px;
-  max-width: $desktopWidth;
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: $tableWidth;
-    padding: 36px;
-  }
-  @media screen and (max-width: $tableWidth) {
-    max-width: $phoneWidth;
-    padding: 28px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    max-width: $smPhoneWidth;
-    padding: 20px;
-  }
+  min-width: 320px;
 }
 
 // Modules
-// @import "modules/exampleModule.scss";
+@import "modules/header.scss";
+@import "modules/footer.scss";
